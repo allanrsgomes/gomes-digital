@@ -26,7 +26,7 @@ const projectsData = [
 ];
 
 function ProjectCard({ project }: { project: typeof projectsData[0] }) {
-  // O componente ProjectCard pode continuar o mesmo
+
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-transform hover:scale-105">
       <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />

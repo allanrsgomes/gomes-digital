@@ -1,7 +1,6 @@
 export function ContactSection() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Aqui você integraria com um serviço como Formspree, Netlify Forms ou um backend próprio.
     alert('Formulário enviado! (Ainda não funcional)');
   };
 

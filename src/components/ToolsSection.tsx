@@ -1,4 +1,3 @@
-// src/components/AboutSection.tsx
 import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaNodeJs } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
 

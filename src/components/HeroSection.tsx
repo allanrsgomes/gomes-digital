@@ -1,11 +1,8 @@
-import avatar from '../assets/avatar.png';
-
 export function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gray-900 text-white pt-20">
+    <section id="home" className="min-h-screen flex items-center bg-gray-900 text-white pt-24">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         
-        {/* Bloco de Texto */}
         <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold my-2 leading-tight">
             Gomes Digital Solutions
@@ -25,9 +22,8 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Bloco de Imagem/Logo */}
         <div className="md:w-1/2 flex justify-center">
-          <img src={avatar} alt="Ícone Gomes Digital Solutions" className="w-200 h-133 md:w-200 md:h-133 animate-pulse-slow" />
+          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/avatar.png" alt="Ícone Gomes Digital Solutions" className="w-200 h-133 md:w-200 md:h-133 animate-pulse-slow" />
         </div>
 
       </div>
