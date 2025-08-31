@@ -1,28 +1,28 @@
 const projectsData = [
- {
-  title: 'Projeto Incrível 1',
-  description: 'Uma breve descrição sobre o projeto, os desafios e as soluções implementadas.',
-  image: 'https://via.placeholder.com/400x250', // Substitua pela URL da imagem do seu projeto
-  tags: ['React', 'TypeScript', 'Tailwind CSS'],
-  liveUrl: '#',
-  repoUrl: '#',
- },
- {
-  title: 'Landing Page Moderna',
-  description: 'Desenvolvimento de uma landing page otimizada para conversão e com design moderno.',
-  image: 'https://via.placeholder.com/400x250', // Substitua pela URL da imagem
-  tags: ['Next.js', 'Framer Motion'],
-  liveUrl: '#',
-  repoUrl: '#',
- },
- {
-  title: 'E-commerce de Roupas',
-  description: 'Plataforma completa de e-commerce com carrinho de compras e integração de pagamentos.',
-  image: 'https://via.placeholder.com/400x250', // Substitua pela URL da imagem
-  tags: ['React', 'Redux', 'Styled Components'],
-  liveUrl: '#',
-  repoUrl: '#',
- },
+  {
+    title: 'Landing Page',
+    description: 'Página moderna e responsiva com design otimizado para conversão e com objetivo de captação de leads.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/blackpanvel.png',
+    tags: ['Angular', 'Material UI'],
+    liveUrl: 'https://www.panvel.com/panvel/lp/black-friday',
+    repoUrl: 'https://www.panvel.com/panvel/lp/black-friday',
+  },
+  {
+    title: 'DevLinks',
+    description: 'Plataforma para agrupar e compartilhar links, conteúdos e redes sociais de maneira organizada através de um link.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/devlinks.png',
+    tags: ['JavaScript', 'Github', 'Figma'],
+    liveUrl: 'https://devlinks-allan.vercel.app',
+    repoUrl: 'https://devlinks-allan.vercel.app',
+  },
+  {
+    title: 'Card Validation RocketPay',
+    description: 'Ferramenta de validação de cartões de crédito para validar se um cartão é válido.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/validationcard.png',
+    tags: ['HTML', 'CSS', 'Vite'],
+    liveUrl: 'https://card-validation-umber.vercel.app',
+    repoUrl: 'https://card-validation-umber.vercel.app',
+  },
 ];
 
 function ProjectCard({ project }: { project: typeof projectsData[0] }) {

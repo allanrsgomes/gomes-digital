@@ -16,8 +16,8 @@ export function Navbar() {
     <nav className="bg-gray-900/80 backdrop-blur-sm text-white p-6 shadow-lg fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
 
-        <a href="#home" className="flex items-center">
-          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" alt="Gomes Digital Solutions Logo" className="h-16" />
+        <a href="/" className="flex items-center">
+          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" alt="Gomes Digital Solutions Logo" className="h-8" />
         </a>
 
         <ul className="hidden md:flex gap-8">
