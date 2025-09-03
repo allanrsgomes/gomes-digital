@@ -5,7 +5,7 @@ export function AboutUsSection() {
         <h2 className="text-4xl font-bold mb-4">Missão</h2>
         <div className="h-1 w-20 bg-cyan-400 mx-auto mb-8"></div>
         <p className="max-w-4xl mx-auto text-gray-300 text-lg leading-relaxed">
-          Na <span className="font-bold text-cyan-400">Gomes Digital Solutions</span>, enxergamos além do código. Nossa missão é criar soluções digitais que sejam tecnicamente impecáveis e, acima de tudo, que impulsionem o crescimento do seu negócio.
+          Na <span className="font-bold text-cyan-400">Gomes Digital</span>, enxergamos além do código. Nossa missão é criar soluções digitais que sejam tecnicamente impecáveis e, acima de tudo, que impulsionem o crescimento do seu negócio.
         </p>
         <p className="max-w-4xl mx-auto text-gray-300 text-lg leading-relaxed">
           Nascemos da paixão por tecnologia e design estratégico, e acreditamos que a verdadeira base para o sucesso online é a união desses dois mundos para gerar valor real e resultados mensuráveis para nossos clientes.

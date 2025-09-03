@@ -17,7 +17,7 @@ export function Navbar() {
       <div className="container mx-auto flex justify-between items-center px-4">
 
         <a href="/" className="flex items-center">
-          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" alt="Gomes Digital Solutions Logo" className="h-8" />
+          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" alt="Gomes Digital Logo" className="h-8" />
         </a>
 
         <ul className="hidden md:flex gap-8">

@@ -18,7 +18,7 @@ export function Footer() {
           </a>
         </div>
         <p className="mt-2 text-sm">Copyright &copy;{currentYear}. Todos os direitos reservados.</p>
-        <p className="mt-2 text-sm">Feito com ❤️ por Gomes Digital Solutions</p>
+        <p className="mt-2 text-sm">Feito com ❤️ por Gomes Digital</p>
       </div>
     </footer>
   );

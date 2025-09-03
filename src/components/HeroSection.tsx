@@ -5,11 +5,11 @@ export function HeroSection() {
 
         <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold my-2 leading-tight">
-            Gomes Digital Solutions
+            Gomes Digital
           </h1>
           <span className="text-lg text-gray-400">Construindo o <span className="text-cyan-400">Futuro Digital</span> do Seu Negócio</span>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">
-            Na Gomes Digital Solutions, transformamos suas ideias em soluções web de alta performance. Criamos sites, landing pages e sistemas sob medida que impulsionam resultados e encantam usuários.
+            Na Gomes Digital, transformamos suas ideias em soluções web de alta performance. Criamos sites, landing pages e sistemas sob medida que impulsionam resultados e encantam usuários.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
@@ -27,7 +27,7 @@ export function HeroSection() {
         </div>
 
         <div className="md:w-1/2 flex justify-center">
-          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/avatar.png" alt="Ícone Gomes Digital Solutions" className="w-200 h-133 md:w-200 md:h-133" />
+          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/avatar.png" alt="Ícone Gomes Digital" className="w-200 h-133 md:w-200 md:h-133" />
         </div>
 
       </div>
