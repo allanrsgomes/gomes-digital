@@ -1,5 +1,4 @@
 export function ContactSection() {
-
   return (
     <section id="contato" className="py-20 bg-gray-800 text-white">
       <div className="container mx-auto px-4">

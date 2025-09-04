@@ -1,32 +1,47 @@
 const projectsData = [
   {
-    title: 'Landing Page',
-    description: 'Página moderna e responsiva com design otimizado para conversão e com objetivo de captação de leads.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/blackpanvel.png',
-    tags: ['Angular', 'Material UI'],
-    liveUrl: 'https://www.panvel.com/panvel/lp/black-friday',
-    repoUrl: 'https://www.panvel.com/panvel/lp/black-friday',
+    title: 'Portfólio (Priscila Pacheco)',
+    description: 'Portfólio focado em apresentar serviços e pacotes de uma profissional de Social Media.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-pripacheco.png',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js'],
+    liveUrl: 'https://priscila-pacheco.vercel.app',
+    repoUrl: 'https://priscila-pacheco.vercel.app',
   },
   {
-    title: 'DevLinks',
+    title: 'Landing Page (TV House)',
+    description: 'Landing page para uma empresa que presta serviços de streaming, como canais de TV, filmes e séries.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-sitetvhouse.png',
+    tags: ['React', 'Next.js', 'Node.js'],
+    liveUrl: 'https://tv-house-site.vercel.app',
+    repoUrl: 'https://tv-house-site.vercel.app',
+  },
+  {
+    title: 'Agrupador de Links (DevLinks)',
     description: 'Plataforma para agrupar e compartilhar links, conteúdos e redes sociais de maneira organizada através de um link.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/devlinks.png',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-devlinks.png',
     tags: ['JavaScript', 'Github', 'Figma'],
     liveUrl: 'https://devlinks-allan.vercel.app',
     repoUrl: 'https://devlinks-allan.vercel.app',
   },
   {
-    title: 'Card Validation RocketPay',
+    title: 'Validação de Cartão (RocketPay)',
     description: 'Ferramenta de validação de cartões de crédito para validar se um cartão é válido.',
     image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/validationcard.png',
     tags: ['HTML', 'CSS', 'Vite'],
     liveUrl: 'https://card-validation-umber.vercel.app',
     repoUrl: 'https://card-validation-umber.vercel.app',
   },
+  {
+    title: 'Landing Page (Black Friday)',
+    description: 'Página moderna e responsiva com design otimizado para conversão e com objetivo de captação de leads.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-blackfriday.png',
+    tags: ['Angular', 'Material UI', 'Figma', 'Node.js'],
+    liveUrl: 'https://www.panvel.com/panvel/lp/black-friday',
+    repoUrl: 'https://www.panvel.com/panvel/lp/black-friday',
+  },
 ];
 
 function ProjectCard({ project }: { project: typeof projectsData[0] }) {
-
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-transform hover:scale-105">
       <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />

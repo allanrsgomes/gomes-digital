@@ -70,7 +70,7 @@ export function ToolsSection() {
        <div className="text-cyan-400 transition-transform duration-300 group-hover:scale-110">
         {skill.icon}
        </div>
-       <span className="text-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+       <span className="text-lg transition-opacity duration-300">
         {skill.name}
        </span>
       </div>
