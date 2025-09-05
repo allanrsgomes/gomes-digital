@@ -7,9 +7,9 @@ export function Navbar() {
   const navLinks = [
     { title: 'Missão', href: '#sobre' },
     { title: 'Serviços', href: '#servicos' },
-    { title: 'Ferramentas', href: '#ferramentas' },
-    { title: 'Portfólio', href: '#portfolio' },
     { title: 'Contato', href: '#contato' },
+    { title: 'Portfólio', href: '#portfolio' },
+    { title: 'Ferramentas', href: '#ferramentas' },
   ];
 
   return (
@@ -17,9 +17,15 @@ export function Navbar() {
       <div className="container mx-auto flex justify-between items-center px-4">
 
         <a href="/" className="flex items-center">
-          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" alt="Gomes Digital Logo" className="h-8" />
+          <span className="hidden md:inline text-4xl font-bold text-logo">G</span>
+          <img 
+            src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" 
+            alt="Gomes Digital Logo" 
+            className="h-8 md:pl-1 md:pr-1" 
+          />
+          <span className="hidden md:inline text-4xl font-bold text-logo">mes Digital</span>
         </a>
-
+        
         <ul className="hidden md:flex gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -29,7 +35,7 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-        
+
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}

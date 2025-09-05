@@ -3,9 +3,19 @@ const projectsData = [
     title: 'Portfólio (Priscila Pacheco)',
     description: 'Portfólio focado em apresentar serviços e pacotes de uma profissional de Social Media.',
     image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-pripacheco.png',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js'],
+    tags: ['Angular', 'Node.js'],
     liveUrl: 'https://priscila-pacheco.vercel.app',
     repoUrl: 'https://priscila-pacheco.vercel.app',
+    showActions: true, 
+  },
+  {
+    title: 'Painel de clientes (Dashboard)',
+    description: 'Dashboard para gerenciamento de clientes, com visualização de dados e métricas.',
+    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-painel.png',
+    tags: ['React', 'Node.js', 'Firebase'],
+    liveUrl: 'https://tv-house-site.vercel.app',
+    repoUrl: 'https://tv-house-site.vercel.app',
+    showActions: false, 
   },
   {
     title: 'Landing Page (TV House)',
@@ -14,6 +24,7 @@ const projectsData = [
     tags: ['React', 'Next.js', 'Node.js'],
     liveUrl: 'https://tv-house-site.vercel.app',
     repoUrl: 'https://tv-house-site.vercel.app',
+    showActions: true, 
   },
   {
     title: 'Agrupador de Links (DevLinks)',
@@ -22,6 +33,7 @@ const projectsData = [
     tags: ['JavaScript', 'Github', 'Figma'],
     liveUrl: 'https://devlinks-allan.vercel.app',
     repoUrl: 'https://devlinks-allan.vercel.app',
+    showActions: true, 
   },
   {
     title: 'Validação de Cartão (RocketPay)',
@@ -30,6 +42,7 @@ const projectsData = [
     tags: ['HTML', 'CSS', 'Vite'],
     liveUrl: 'https://card-validation-umber.vercel.app',
     repoUrl: 'https://card-validation-umber.vercel.app',
+    showActions: true,
   },
   {
     title: 'Landing Page (Black Friday)',
@@ -38,25 +51,28 @@ const projectsData = [
     tags: ['Angular', 'Material UI', 'Figma', 'Node.js'],
     liveUrl: 'https://www.panvel.com/panvel/lp/black-friday',
     repoUrl: 'https://www.panvel.com/panvel/lp/black-friday',
+    showActions: true, 
   },
 ];
 
 function ProjectCard({ project }: { project: typeof projectsData[0] }) {
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-transform hover:scale-105">
+    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-transform hover:scale-105 flex flex-col">
       <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-400 mb-4">{project.description}</p>
+        <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
             <span key={tag} className="bg-cyan-900/50 text-cyan-300 text-sm font-semibold px-2 py-1 rounded-full">{tag}</span>
           ))}
         </div>
-        <div className="flex justify-between mt-6">
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Ver Projeto</a>
-          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Ver Detalhes</a>
-        </div>
+        {project.showActions && (
+          <div className="flex justify-between mt-auto pt-4">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Ver Projeto</a>
+            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Ver Detalhes</a>
+          </div>
+        )}
       </div>
     </div>
   );

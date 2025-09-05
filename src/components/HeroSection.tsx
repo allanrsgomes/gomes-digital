@@ -1,4 +1,7 @@
 export function HeroSection() {
+
+  const whatsappLink = `https://wa.me/5548988591509?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20seu%20site%20Gomes%20Digital`;
+
   return (
     <section id="home" className="min-h-screen flex items-center bg-gray-900 text-white pt-24">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
@@ -17,7 +20,7 @@ export function HeroSection() {
               Veja nosso Portfólio
             </a>
             <a
-              href="https://wa.me/5548988591509?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20seu%20site%20Gomes%20Digital"
+              href={whatsappLink}
               target="_blank"
               className="bg-transparent border-2 border-cyan-500 hover:bg-cyan-500 hover:text-gray-900 text-cyan-400 font-bold py-3 px-8 rounded-lg transition-colors text-center"
             >
