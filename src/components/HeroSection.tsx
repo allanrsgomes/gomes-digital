@@ -3,14 +3,14 @@ export function HeroSection() {
   const whatsappLink = `https://wa.me/5548988591509?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20seu%20site%20Gomes%20Digital`;
 
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gray-900 text-white pt-24">
+    <section id="home" className="min-h-screen flex items-center bg-gray-900 text-white pt-24 ">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
 
         <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold my-2 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold my-2 leading-tight font-fira-code">
             Gomes Digital
           </h1>
-          <span className="text-lg text-gray-400">Construindo o <span className="text-cyan-400">Futuro Digital</span> do Seu Negócio</span>
+          <span className="text-lg text-gray-400 font-fira-code">Construindo o <span className="text-cyan-400">Futuro Digital</span> do Seu Negócio</span>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">
             Na Gomes Digital, transformamos suas ideias em soluções web de alta performance. Criamos sites, landing pages e sistemas sob medida que impulsionam resultados e encantam usuários.
           </p>

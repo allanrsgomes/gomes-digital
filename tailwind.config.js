@@ -16,6 +16,9 @@ export default {
         'text-muted': '#9ca3af',
         'logo': '#5352ED',
       },
+      fontFamily: {
+        'fira-code': ['"Fira Code"', 'monospace']
+      },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       }

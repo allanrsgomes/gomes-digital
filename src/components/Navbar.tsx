@@ -16,17 +16,15 @@ export function Navbar() {
     <nav className="bg-gray-900/80 backdrop-blur-sm text-white p-6 shadow-lg fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
 
-        <a href="/" className="flex items-center">
-          <span className="hidden md:inline text-4xl font-bold text-logo">G</span>
+        <a href="/">
           <img 
-            src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/icon.png" 
-            alt="Gomes Digital Logo" 
-            className="h-8 md:pl-1 md:pr-1" 
+            src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/logo-gomes.png" 
+            alt="Gomes Digital Logo"
+            className='max-w-[120px] h-auto'
           />
-          <span className="hidden md:inline text-4xl font-bold text-logo">mes Digital</span>
         </a>
         
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden md:flex gap-4 font-fira-code">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="text-lg hover:text-cyan-400 transition-colors">
