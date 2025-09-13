@@ -18,7 +18,7 @@ export function Navbar() {
 
         <a href="/">
           <img 
-            src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/logo-gomes.png" 
+            src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/logo-white.png" 
             alt="Gomes Digital Logo"
             className='max-w-[120px] h-auto'
           />
