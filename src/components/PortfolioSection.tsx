@@ -1,95 +1,97 @@
-const projectsData = [
-  {
-    title: 'Portfólio (Priscila Pacheco)',
-    description: 'Portfólio focado em apresentar serviços e pacotes de uma profissional de Social Media.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-pripacheco.png',
-    tags: ['Angular', 'Node.js'],
-    liveUrl: 'https://priscila-pacheco.vercel.app',
-    repoUrl: 'https://priscila-pacheco.vercel.app',
-    showActions: true, 
-  },
-  {
-    title: 'Painel de clientes (Dashboard)',
-    description: 'Dashboard para gerenciamento de clientes, com visualização de dados e métricas.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-painel.png',
-    tags: ['React', 'Node.js', 'Firebase'],
-    liveUrl: 'https://tv-house-site.vercel.app',
-    repoUrl: 'https://tv-house-site.vercel.app',
-    showActions: false, 
-  },
-  {
-    title: 'Landing Page (TV House)',
-    description: 'Landing page para uma empresa que presta serviços de streaming, como canais de TV, filmes e séries.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-sitetvhouse.png',
-    tags: ['React', 'Next.js', 'Node.js'],
-    liveUrl: 'https://tv-house-site.vercel.app',
-    repoUrl: 'https://tv-house-site.vercel.app',
-    showActions: true, 
-  },
-  {
-    title: 'Agrupador de Links (DevLinks)',
-    description: 'Plataforma para agrupar e compartilhar links, conteúdos e redes sociais de maneira organizada através de um link.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-devlinks.png',
-    tags: ['JavaScript', 'Github', 'Figma'],
-    liveUrl: 'https://devlinks-allan.vercel.app',
-    repoUrl: 'https://devlinks-allan.vercel.app',
-    showActions: true, 
-  },
-  {
-    title: 'Validação de Cartão (RocketPay)',
-    description: 'Ferramenta de validação de cartões de crédito para validar se um cartão é válido.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/validationcard.png',
-    tags: ['HTML', 'CSS', 'Vite'],
-    liveUrl: 'https://card-validation-umber.vercel.app',
-    repoUrl: 'https://card-validation-umber.vercel.app',
-    showActions: true,
-  },
-  {
-    title: 'Landing Page (Black Friday)',
-    description: 'Página moderna e responsiva com design otimizado para conversão e com objetivo de captação de leads.',
-    image: 'https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/portfolio/thumbnail-blackfriday.png',
-    tags: ['Angular', 'Material UI', 'Figma', 'Node.js'],
-    liveUrl: 'https://www.panvel.com/panvel/lp/black-friday',
-    repoUrl: 'https://www.panvel.com/panvel/lp/black-friday',
-    showActions: true, 
-  },
-];
+import React, { useState, useMemo } from 'react';
+import { ProjectCard } from './ProjectCard';
+import { projectsData } from '../data/projectsData';
+import { sectionClasses } from '../constants/portfolioStyles';
+import { PROJECT_CATEGORIES } from '../constants/projectCategories';
+import type { ProjectCategory } from '../types/project';
 
-function ProjectCard({ project }: { project: typeof projectsData[0] }) {
+export const PortfolioSection: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | 'all'>('all');
+  const [displayCount, setDisplayCount] = useState<number>(6);
+
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === 'all') {
+      return projectsData;
+    }
+    return projectsData.filter(project => project.category === selectedCategory);
+  }, [selectedCategory]);
+
+  const displayedProjects = useMemo(() => {
+    return filteredProjects.slice(0, displayCount);
+  }, [filteredProjects, displayCount]);
+
+  const hasMoreProjects = displayedProjects.length < filteredProjects.length;
+
+  const handleCategoryChange = (category: ProjectCategory | 'all') => {
+    setSelectedCategory(category);
+    setDisplayCount(6); // Reset display count when changing category
+  };
+
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + 6);
+  };
+
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-transform hover:scale-105 flex flex-col">
-      <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag) => (
-            <span key={tag} className="bg-cyan-900/50 text-cyan-300 text-sm font-semibold px-2 py-1 rounded-full">{tag}</span>
+    <section id="portfolio" className={sectionClasses.section}>
+      <div className={sectionClasses.container}>
+        <h2 className={sectionClasses.title}>
+          Portfólio
+        </h2>
+        <div className={sectionClasses.divider} />
+
+        {/* Filtros de categoria */}
+        <div className={sectionClasses.filterContainer}>
+          <button
+            onClick={() => handleCategoryChange('all')}
+            className={`${sectionClasses.filterButton} ${selectedCategory === 'all' ? sectionClasses.filterButtonActive : ''
+              }`}
+          >
+            Todos ({projectsData.length})
+          </button>
+          {Object.entries(PROJECT_CATEGORIES).map(([key, label]) => {
+            const count = projectsData.filter(p => p.category === key).length;
+            if (count === 0) return null;
+
+            return (
+              <button
+                key={key}
+                onClick={() => handleCategoryChange(key as ProjectCategory)}
+                className={`${sectionClasses.filterButton} ${selectedCategory === key ? sectionClasses.filterButtonActive : ''
+                  }`}
+              >
+                {label} ({count})
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Grid de projetos */}
+        <div className={sectionClasses.projectsGrid}>
+          {displayedProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              variant={project.isFeatured ? 'featured' : 'default'}
+            />
           ))}
         </div>
-        {project.showActions && (
-          <div className="flex justify-between mt-auto pt-4">
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Ver Projeto</a>
-            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Ver Detalhes</a>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
 
-export function PortfolioSection() {
-  return (
-    <section id="portfolio" className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 font-fira-code">Portfólio</h2>
-        <div className="h-1 w-20 bg-cyan-400 mx-auto mb-12"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectsData.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
+        {/* Botão carregar mais */}
+        {hasMoreProjects && (
+          <button
+            onClick={handleLoadMore}
+            className={sectionClasses.loadMoreButton}
+          >
+            Carregar Mais Projetos ({filteredProjects.length - displayedProjects.length} restantes)
+          </button>
+        )}
+
+        {/* Contador de projetos */}
+        <div className="text-center mt-8 text-gray-400 text-sm">
+          Exibindo {displayedProjects.length} de {filteredProjects.length} projetos
+          {selectedCategory !== 'all' && ` em ${PROJECT_CATEGORIES[selectedCategory as ProjectCategory]}`}
         </div>
       </div>
     </section>
   );
-}
+};

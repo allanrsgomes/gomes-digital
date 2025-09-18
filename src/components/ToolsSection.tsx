@@ -1,82 +1,72 @@
-import {
- FaReact,
- FaJsSquare,
- FaHtml5,
- FaCss3Alt,
- FaNodeJs,
- FaSass,
- FaGitAlt,
- FaFigma,
- FaGithub,
- FaAngular,
-} from 'react-icons/fa';
-import {
- SiTypescript,
- SiTailwindcss,
- SiNextdotjs,
- SiVite,
- SiRedux,
- SiExpress,
- SiPrisma,
- SiPostgresql,
- SiMongodb,
- SiFirebase,
- SiJest,
- SiCypress,
- SiVercel,
- SiNgrx,
-} from 'react-icons/si';
+import React, { useState, useMemo } from 'react';
+import { SkillCard } from './SkillCard';
+import { skillsData } from '../data/skillsData';
+import { sectionClasses } from '../constants/toolsStyles';
+import { SKILL_CATEGORIES } from '../constants/skillCategories';
+import type { SkillCategory } from '../types/skill';
 
-const skills = [
- { icon: <FaJsSquare size={40} />, name: 'JavaScript' },
- { icon: <SiTypescript size={40} />, name: 'TypeScript' },
- { icon: <FaHtml5 size={40} />, name: 'HTML5' },
- { icon: <FaCss3Alt size={40} />, name: 'CSS3' },
- { icon: <FaReact size={40} />, name: 'React' },
- { icon: <SiNextdotjs size={40} />, name: 'Next.js' },
- { icon: <FaAngular size={40} />, name: 'Angular' },
- { icon: <SiVite size={40} />, name: 'Vite' },
- { icon: <SiRedux size={40} />, name: 'Redux' },
- { icon: <SiNgrx size={40} />, name: 'NgRx' },
- { icon: <SiTailwindcss size={40} />, name: 'Tailwind CSS' },
- { icon: <FaSass size={40} />, name: 'Sass' },
- { icon: <FaNodeJs size={40} />, name: 'Node.js' },
- { icon: <SiExpress size={40} />, name: 'Express' },
- { icon: <SiPrisma size={40} />, name: 'Prisma' },
- { icon: <SiPostgresql size={40} />, name: 'PostgreSQL' },
- { icon: <SiMongodb size={40} />, name: 'MongoDB' },
- { icon: <SiFirebase size={40} />, name: 'Firebase' },
- { icon: <SiJest size={40} />, name: 'Jest' },
- { icon: <SiCypress size={40} />, name: 'Cypress' },
- { icon: <FaGitAlt size={40} />, name: 'Git' },
- { icon: <FaGithub size={40} />, name: 'GitHub' },
- { icon: <SiVercel size={40} />, name: 'Vercel' },
- { icon: <FaFigma size={40} />, name: 'Figma' },
-];
+export const ToolsSection: React.FC = () => {
+ const [selectedCategory, setSelectedCategory] = useState<SkillCategory | 'all'>('all');
 
-export function ToolsSection() {
+ const filteredSkills = useMemo(() => {
+  if (selectedCategory === 'all') {
+   return skillsData;
+  }
+  return skillsData.filter(skill => skill.category === selectedCategory);
+ }, [selectedCategory]);
+
+ const handleCategoryChange = (category: SkillCategory | 'all') => {
+  setSelectedCategory(category);
+ };
+
  return (
-  <section id="ferramentas" className="py-20 bg-gray-800 text-white">
-   <div className="container mx-auto px-4 text-center">
-    <h2 className="text-4xl font-bold mb-4 font-fira-code">Ferramentas e Tecnologias</h2>
-    <div className="h-1 w-20 bg-cyan-400 mx-auto mb-12"></div>
-    <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-     {skills.map((skill) => (
-      <div
-       key={skill.name}
-       className="group flex flex-col items-center justify-center gap-2 p-4 bg-gray-700/50 rounded-lg w-32 h-32 transition-all duration-300 hover:bg-gray-700 hover:-translate-y-2"
-       title={skill.name}
+  <section id="ferramentas" className={sectionClasses.section}>
+   <div className={sectionClasses.container}>
+    <h2 className={sectionClasses.title}>
+     Ferramentas e Tecnologias
+    </h2>
+    <div className={sectionClasses.divider} />
+
+    {/* Filtros de categoria (opcional) */}
+    <div className="mb-8 flex flex-wrap justify-center gap-2 sm:gap-4">
+     <button
+      onClick={() => handleCategoryChange('all')}
+      className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${selectedCategory === 'all'
+        ? 'bg-cyan-400 text-gray-900'
+        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+       }`}
+     >
+      Todas
+     </button>
+     {Object.entries(SKILL_CATEGORIES).map(([key, label]) => (
+      <button
+       key={key}
+       onClick={() => handleCategoryChange(key as SkillCategory)}
+       className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${selectedCategory === key
+         ? 'bg-cyan-400 text-gray-900'
+         : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+        }`}
       >
-       <div className="text-cyan-400 transition-transform duration-300 group-hover:scale-110">
-        {skill.icon}
-       </div>
-       <span className="text-lg transition-opacity duration-300">
-        {skill.name}
-       </span>
-      </div>
+       {label}
+      </button>
      ))}
+    </div>
+
+    {/* Grid de habilidades */}
+    <div className={sectionClasses.skillsGrid}>
+     {filteredSkills.map((skill) => (
+      <SkillCard key={skill.id} skill={skill} />
+     ))}
+    </div>
+
+    {/* Contador de tecnologias */}
+    <div className="mt-8 text-gray-400 text-sm">
+     {selectedCategory === 'all'
+      ? `${skillsData.length} tecnologias`
+      : `${filteredSkills.length} tecnologias em ${SKILL_CATEGORIES[selectedCategory as SkillCategory]}`
+     }
     </div>
    </div>
   </section>
  );
-}
+};

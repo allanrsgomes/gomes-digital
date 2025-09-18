@@ -1,39 +1,61 @@
-import { FaCode, FaPaintBrush, FaRocket } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { ServiceCard } from './ServiceCard';
+import { mainServicesData, servicesData } from '../data/servicesData';
+import { sectionClasses } from '../constants/servicesStyles';
 
-const services = [
- {
-  icon: <FaCode size={40} className="text-cyan-400" />,
-  title: "Desenvolvimento Web",
-  description: "Criamos sites e sistemas web robustos, escaláveis e otimizados para performance, utilizando as tecnologias mais modernas do mercado."
- },
- {
-  icon: <FaPaintBrush size={40} className="text-cyan-400" />,
-  title: "UI/UX Design",
-  description: "Projetamos interfaces intuitivas e atraentes, focadas na experiência do usuário para garantir engajamento e conversão."
- },
- {
-  icon: <FaRocket size={40} className="text-cyan-400" />,
-  title: "Otimização e SEO",
-  description: "Melhoramos a velocidade do seu site e aplicamos as melhores práticas de SEO para garantir que seu negócio seja encontrado no Google."
- }
-];
+export const ServicesSection: React.FC = () => {
+ const [showAllServices, setShowAllServices] = useState<boolean>(false);
+ const displayServices = showAllServices ? servicesData : mainServicesData;
+ const handleToggleServices = () => {
+  setShowAllServices(prev => !prev);
+ };
 
-export function ServicesSection() {
  return (
-  <section id="servicos" className="py-20 bg-gray-900 text-white">
-   <div className="container mx-auto px-4 text-center">
-    <h2 className="text-4xl font-bold mb-4 font-fira-code">Serviços</h2>
-    <div className="h-1 w-20 bg-cyan-400 mx-auto mb-12"></div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-     {services.map((service) => (
-      <div key={service.title} className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition-transform hover:scale-105 flex flex-col items-center justify-center text-center">
-       <div className="mb-4">{service.icon}</div>
-       <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-       <p className="text-gray-400">{service.description}</p>
-      </div>
+  <section id="servicos" className={sectionClasses.section}>
+   <div className={sectionClasses.container}>
+    <h2 className={sectionClasses.title}>
+     Serviços
+    </h2>
+
+    <p className={sectionClasses.subtitle}>
+     Oferecemos soluções completas para transformar sua ideia em realidade digital
+    </p>
+
+    <div className={sectionClasses.divider} />
+
+    <div className={sectionClasses.servicesGrid}>
+     {displayServices.map((service) => (
+      <ServiceCard
+       key={service.id}
+       service={service}
+       variant={service.isPopular ? 'featured' : 'default'}
+      />
      ))}
+    </div>
+
+    {/* Botão para mostrar/ocultar todos os serviços */}
+    {servicesData.length > mainServicesData.length && (
+     <button
+      onClick={handleToggleServices}
+      className={sectionClasses.viewAllButton}
+      aria-expanded={showAllServices}
+      aria-label={showAllServices ? 'Mostrar menos serviços' : 'Ver todos os serviços'}
+     >
+      {showAllServices ? 'Ver Menos Serviços' : 'Ver Todos os Serviços'}
+      <span className="ml-2">
+       {showAllServices ? '↑' : '↓'}
+      </span>
+     </button>
+    )}
+
+    {/* Contador de serviços */}
+    <div className="mt-8 text-gray-400 text-sm">
+     {showAllServices
+      ? `${servicesData.length} serviços disponíveis`
+      : `${mainServicesData.length} de ${servicesData.length} serviços`
+     }
     </div>
    </div>
   </section>
  );
-}
+};
