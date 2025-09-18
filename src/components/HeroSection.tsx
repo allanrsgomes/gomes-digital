@@ -30,7 +30,7 @@ export function HeroSection() {
         </div>
 
         <div className="md:w-1/2 flex justify-center">
-          <img src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/avatar.png" alt="Ícone Gomes Digital" className="w-200 h-133 md:w-200 md:h-133" />
+          <img fetchPriority="high" alt="Ícone Gomes Digital" className="w-200 h-133 md:w-200 md:h-133" src="https://ffjbl9i9xsnochut.public.blob.vercel-storage.com/avatar.png" />
         </div>
 
       </div>
