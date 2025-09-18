@@ -5,9 +5,6 @@ import { TestimonialCard } from './TestimonialCard';
 import { testimonialsData } from '../data/testimonialsData';
 import { swiperConfig } from '../config/swiperConfig';
 import { sectionClasses } from '../constants/testimonialStyles';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export const TestimonialsSection: React.FC = () => {
  return (
@@ -17,7 +14,6 @@ export const TestimonialsSection: React.FC = () => {
      Depoimentos de Clientes
     </h2>
     <div className={sectionClasses.divider} />
-
     <div className={sectionClasses.swiperContainer}>
      <Swiper
       modules={[Navigation, Pagination, Autoplay]}
@@ -29,7 +25,6 @@ export const TestimonialsSection: React.FC = () => {
         <TestimonialCard testimonial={testimonial} />
        </SwiperSlide>
       ))}
-
       <div className={`swiper-button-prev ${sectionClasses.navigationButton}`} />
       <div className={`swiper-button-next ${sectionClasses.navigationButton}`} />
      </Swiper>
