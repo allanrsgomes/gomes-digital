@@ -7,10 +7,10 @@ export function HeroSection() {
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
 
         <div className="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold my-2 leading-tight font-fira-code">
+          <h1 className="text-4xl md:text-6xl font-bold my-2 leading-tight">
             Gomes Digital
           </h1>
-          <span className="text-lg text-gray-400 font-fira-code">Construindo o <span className="text-cyan-400">Futuro Digital</span> do Seu Negócio</span>
+          <span className="text-lg text-gray-400">Construindo o <span className="text-cyan-400">Futuro Digital</span> do Seu Negócio</span>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">
             Na Gomes Digital, transformamos suas ideias em soluções web de alta performance. Criamos sites, landing pages e sistemas sob medida que impulsionam resultados e encantam usuários.
           </p>

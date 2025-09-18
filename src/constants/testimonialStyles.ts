@@ -31,7 +31,7 @@ interface SectionClasses {
 export const sectionClasses: SectionClasses = {
  section: "py-16 md:py-20 bg-gray-800 text-white",
  container: "container mx-auto px-4 sm:px-6 lg:px-8 text-center",
- title: "text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-fira-code",
+ title: "text-2xl sm:text-3xl md:text-4xl font-bold mb-4",
  divider: "h-1 w-16 sm:w-20 bg-cyan-400 mx-auto mb-8 sm:mb-12",
  swiperContainer: "max-w-7xl mx-auto",
  slide: "px-2 sm:px-4",

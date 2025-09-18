@@ -52,7 +52,7 @@ interface SectionClasses {
 export const sectionClasses: SectionClasses = {
  section: "py-16 md:py-20 bg-gray-900 text-white",
  container: "container mx-auto px-4 sm:px-6 lg:px-8",
- title: "text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 font-fira-code",
+ title: "text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4",
  subtitle: "text-gray-400 text-lg text-center mb-8 max-w-2xl mx-auto",
  divider: "h-1 w-16 sm:w-20 bg-cyan-400 mx-auto mb-8 sm:mb-12",
  filterContainer: "flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12",

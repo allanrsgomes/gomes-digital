@@ -5,7 +5,7 @@ export function Footer() {
   const whatsappLink = `https://wa.me/5548988591509?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20seu%20site%20Gomes%20Digital`;
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-8 font-fira-code">
+    <footer className="bg-gray-900 text-gray-400 py-8">
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center gap-6 mb-4">
           <a 

@@ -33,7 +33,7 @@ interface SectionClasses {
 export const sectionClasses: SectionClasses = {
  section: "py-16 md:py-20 bg-gray-900 text-white",
  container: "container mx-auto px-4 sm:px-6 lg:px-8 text-center",
- title: "text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-fira-code",
+ title: "text-2xl sm:text-3xl md:text-4xl font-bold mb-4",
  subtitle: "text-gray-400 text-lg mb-8 max-w-2xl mx-auto",
  divider: "h-1 w-16 sm:w-20 bg-cyan-400 mx-auto mb-8 sm:mb-12",
  servicesGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10",

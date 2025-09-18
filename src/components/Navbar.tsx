@@ -24,7 +24,7 @@ export function Navbar() {
           />
         </a>
         
-        <ul className="hidden md:flex gap-4 font-fira-code">
+        <ul className="hidden md:flex gap-4">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="text-lg hover:text-cyan-400 transition-colors">
