@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { SkillCard } from './SkillCard';
+import { SkillCard } from '../components/SkillCard';
 import { skillsData } from '../data/skillsData';
 import { sectionClasses } from '../constants/toolsStyles';
 import { SKILL_CATEGORIES } from '../constants/skillCategories';
@@ -27,7 +27,6 @@ export const ToolsSection: React.FC = () => {
     </h2>
     <div className={sectionClasses.divider} />
 
-    {/* Filtros de categoria (opcional) */}
     <div className="mb-8 flex flex-wrap justify-center gap-2 sm:gap-4">
      <button
       onClick={() => handleCategoryChange('all')}
@@ -52,14 +51,12 @@ export const ToolsSection: React.FC = () => {
      ))}
     </div>
 
-    {/* Grid de habilidades */}
     <div className={sectionClasses.skillsGrid}>
      {filteredSkills.map((skill) => (
       <SkillCard key={skill.id} skill={skill} />
      ))}
     </div>
 
-    {/* Contador de tecnologias */}
     <div className="mt-8 text-gray-400 text-sm">
      {selectedCategory === 'all'
       ? `${skillsData.length} tecnologias`

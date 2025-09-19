@@ -29,7 +29,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
    return `${baseClass} ${projectCardClasses.featuredTag}`;
   }
 
-  // Cores baseadas na tecnologia
   const techColors: Record<string, string> = {
    'React': 'bg-blue-900/50 text-blue-300',
    'Angular': 'bg-red-900/50 text-red-300',

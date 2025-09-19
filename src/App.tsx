@@ -1,12 +1,12 @@
 import { Navbar } from './components/Navbar';
-import { HeroSection } from './components/HeroSection';
-import { AboutUsSection } from './components/AboutUsSection';
-import { ServicesSection } from './components/ServicesSection';
-import { PortfolioSection } from './components/PortfolioSection';
-import { ContactSection } from './components/ContactSection';
+import { HeroSection } from './pages/HeroSection';
+import { AboutUsSection } from './pages/AboutUsSection';
+import { ServicesSection } from './pages/ServicesSection';
+import { TestimonialsSection } from './pages/TestimonialsSection';
+import { PortfolioSection } from './pages/PortfolioSection';
+import { ContactSection } from './pages/ContactSection';
+import { ToolsSection } from './pages/ToolsSection';
 import { Footer } from './components/Footer';
-import { ToolsSection } from './components/ToolsSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <HeroSection />
         <AboutUsSection />
         <ServicesSection />
-        <ContactSection />
-        <PortfolioSection />
         <TestimonialsSection />
+        <PortfolioSection />
+        <ContactSection />
         <ToolsSection />
       </main>
       <Footer />

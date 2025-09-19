@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ServiceCard } from './ServiceCard';
+import { ServiceCard } from '../components/ServiceCard';
 import { mainServicesData, servicesData } from '../data/servicesData';
 import { sectionClasses } from '../constants/servicesStyles';
 
@@ -16,13 +16,10 @@ export const ServicesSection: React.FC = () => {
     <h2 className={sectionClasses.title}>
      Serviços
     </h2>
-
     <p className={sectionClasses.subtitle}>
      Oferecemos soluções completas para transformar sua ideia em realidade digital
     </p>
-
     <div className={sectionClasses.divider} />
-
     <div className={sectionClasses.servicesGrid}>
      {displayServices.map((service) => (
       <ServiceCard
@@ -33,7 +30,6 @@ export const ServicesSection: React.FC = () => {
      ))}
     </div>
 
-    {/* Botão para mostrar/ocultar todos os serviços */}
     {servicesData.length > mainServicesData.length && (
      <button
       onClick={handleToggleServices}
@@ -48,7 +44,6 @@ export const ServicesSection: React.FC = () => {
      </button>
     )}
 
-    {/* Contador de serviços */}
     <div className="mt-8 text-gray-400 text-sm">
      {showAllServices
       ? `${servicesData.length} serviços disponíveis`

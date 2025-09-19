@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { TestimonialCard } from './TestimonialCard';
+import { TestimonialCard } from '../components/TestimonialCard';
 import { testimonialsData } from '../data/testimonialsData';
 import { swiperConfig } from '../config/swiperConfig';
 import { sectionClasses } from '../constants/testimonialStyles';

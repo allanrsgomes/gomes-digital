@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ProjectCard } from './ProjectCard';
+import { ProjectCard } from '../components/ProjectCard';
 import { projectsData } from '../data/projectsData';
 import { sectionClasses } from '../constants/portfolioStyles';
 import { PROJECT_CATEGORIES } from '../constants/projectCategories';
@@ -24,7 +24,7 @@ export const PortfolioSection: React.FC = () => {
 
   const handleCategoryChange = (category: ProjectCategory | 'all') => {
     setSelectedCategory(category);
-    setDisplayCount(6); // Reset display count when changing category
+    setDisplayCount(6);
   };
 
   const handleLoadMore = () => {
@@ -39,7 +39,6 @@ export const PortfolioSection: React.FC = () => {
         </h2>
         <div className={sectionClasses.divider} />
 
-        {/* Filtros de categoria */}
         <div className={sectionClasses.filterContainer}>
           <button
             onClick={() => handleCategoryChange('all')}
@@ -65,7 +64,6 @@ export const PortfolioSection: React.FC = () => {
           })}
         </div>
 
-        {/* Grid de projetos */}
         <div className={sectionClasses.projectsGrid}>
           {displayedProjects.map((project) => (
             <ProjectCard
@@ -76,7 +74,6 @@ export const PortfolioSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Botão carregar mais */}
         {hasMoreProjects && (
           <button
             onClick={handleLoadMore}
@@ -86,7 +83,6 @@ export const PortfolioSection: React.FC = () => {
           </button>
         )}
 
-        {/* Contador de projetos */}
         <div className="text-center mt-8 text-gray-400 text-sm">
           Exibindo {displayedProjects.length} de {filteredProjects.length} projetos
           {selectedCategory !== 'all' && ` em ${PROJECT_CATEGORIES[selectedCategory as ProjectCategory]}`}
